@@ -5,8 +5,7 @@ const Artist = new Schema(
     {
         name:{type: String, required:true},
         image:{type: String, required:false},
-        released:{type: String, required: false},
-        runtime:{type: String, required: false}
+        genre:{type: String, required:false},
     },
     {timestamps:true }
 )
