@@ -5,11 +5,11 @@ const Song = require('../models/song')
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const main = async () => {
-const Wake = Album.find({name:"Wake"})
-const Nothingness = Album.find({name:"...And I Return To Nothingness(EP)"})
-const NoFiller = Album.find({name:"All Killer No Filler"})
-const Impulse = Album.find({name:"Impulse"})
-const SelectDificulty = Album.find({name:"Periphery III: Select Dificulty"})
+const Wake = await Album.find({name:"Wake"})
+const Nothingness = await Album.find({name:"...And I Return To Nothingness(EP)"})
+const NoFiller = await Album.find({name:"All Killer No Filler"})
+const Impulse = await Album.find({name:"Impulse"})
+const SelectDificulty = await Album.find({name:"Periphery III: Select Dificulty"})
 const songs = [
     {name:"Rolling Out the Red Carpet", album_id: Wake[0]._id, track_number: 1, length: "2:05", explicit: false},
     {name:"Human Target Practice", album_id: Wake[0]._id, track_number: 2, length: "3:54", explicit: false},
@@ -53,7 +53,7 @@ const songs = [
     {name:"Motormouth", album_id: SelectDificulty[0]._id, track_number: 2, length: "4:50", explicit: true},
     {name:"Marigold", album_id: SelectDificulty[0]._id, track_number: 3, length: "7:49", explicit: false},
     {name:"The Way The News Goes...", album_id: SelectDificulty[0]._id, track_number: 4, length: "5:03", explicit: true},
-    {name:"Remain Indoors", album_id: SelectDificulty, track_number: 5, length: "6:10", explicit: true},
+    {name:"Remain Indoors", album_id: SelectDificulty[0]._id, track_number: 5, length: "6:10", explicit: true},
     {name:"Habitual Line-Stepper", album_id: SelectDificulty[0]._id, track_number: 6, length: "6:52", explicit: true},
     {name:"Flateline", album_id: SelectDificulty[0]._id, track_number: 7, length: "5:50", explicit: false},
     {name:"Absolomb", album_id: SelectDificulty[0]._id, track_number: 8, length: "7:43", explicit: false},
