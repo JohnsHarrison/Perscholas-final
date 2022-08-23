@@ -9,7 +9,6 @@ const Song = new Schema(
         track_number:{type: Number, required: false},
         length:{type: String, required: false},
         explict:{ type: Boolean, required: false},
-        lyrics:{type: String, required:false}
     },
     {timestamps:true}
 )

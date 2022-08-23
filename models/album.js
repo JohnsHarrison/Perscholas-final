@@ -8,7 +8,7 @@ const Album = new Schema(
         name:{type: String, required:true},
         image:{type: String, required:false},
         tracks:{type: Number, required: false},
-        released:{type: String, required: false},
+        released:{type: Number, required: false},
         runtime:{type: String, required: false}
     },
     {timestamps:true }
