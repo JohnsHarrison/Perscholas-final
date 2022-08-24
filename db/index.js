@@ -1,6 +1,7 @@
 const mongoose = require("mongoose")
+require('dotenv').config()
 
-let MONGODB_URI = process.env.PROD_MONGODB || process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/musicDatabase"
+let MONGODB_URI = process.env.MONGODB_PROD || process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/musicDatabase"
 
 
 mongoose.connect( MONGODB_URI,{
