@@ -60,6 +60,86 @@ const getAlbumByID = async (req,res) =>{
     }
 }
 
+const createArtist = async (req,res) =>{
+        try{
+         const artist = await new Artist(req.body)
+         await artist.save()
+         return res.status(201).json({
+            artist,
+         })
+        }catch(error){
+         return res.status(500).json({error: error.message})
+        }
+    
+}
+
+const createSong = async (req,res) =>{
+    try{
+        const song = await new Song(req.body)
+        await song.save()
+        return res.status(201).json({
+           song,
+        })
+       }catch(error){
+        return res.status(500).json({error: error.message})
+       }
+}
+
+const createAlbum = async (req,res) =>{
+    try{
+     const album = await new Album(req.body)
+     await album.save()
+     return res.status(201).json({
+        album,
+     })
+    }catch(error){
+     return res.status(500).json({error: error.message})
+    }
+
+}
+
+const deleteArtist = async (req,res) =>{
+    try{
+        const {id} = req.params
+        const deleted = await Artist.findByIdAndDelete(id)
+        if(deleted){
+            return res.status(200).send("Artist deleted")
+        }
+        throw new Error("Artist not found")
+    }catch(error){
+        return res.status(500).send(error.message)
+    }
+}
+
+const deleteAlbum = async (req,res) =>{
+    try{
+        const {id} = req.params
+        const deleted = await Album.findByIdAndDelete(id)
+        if(deleted){
+            return res.status(200).send("Album deleted")
+        }
+        throw new Error("Album not found")
+    }catch(error){
+        return res.status(500).send(error.message)
+    }
+}
+
+const deleteSong = async (req,res) =>{
+    try{
+        const {id} = req.params
+        const deleted = await Song.findByIdAndDelete(id)
+        if(deleted){
+            return res.status(200).send("Song deleted")
+        }
+        throw new Error("Song not found")
+    }catch(error){
+        return res.status(500).send(error.message)
+    }
+}
+
+
+
+
 
 
 
@@ -71,6 +151,12 @@ module.exports={
     getAllArtists,
     getAllSongs,
     getArtistByID,
-    getAlbumByID
+    getAlbumByID,
+    createArtist,
+    deleteArtist,
+    createAlbum,
+    deleteAlbum,
+    createSong,
+    deleteSong
 
 }
