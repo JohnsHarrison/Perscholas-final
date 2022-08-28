@@ -1,14 +1,24 @@
 .App {
   text-align: center;
 }
-/* 
+
 .CommunityCard{
-  height: 200px;
-  width: 200px;
   margin: 5px;
 }
 
 .CommunityCardContainer{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wr
+  ap;
+} 
+
+form{
+  display: flex;
+  flex-direction: column;
+}
+
+.Contribute{
   display:flex;
-  height: 300px;
-} */
+  justify-content:space-evenly;
+}

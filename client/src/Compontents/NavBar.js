@@ -6,6 +6,7 @@ function NavBar(){
         <div>
             <NavLink to={'/'}>Home</NavLink>
             <NavLink to={'/community'}>Community</NavLink>
+            <NavLink to={'/contribute'}>Contribute</NavLink>
         </div>
     )
 
