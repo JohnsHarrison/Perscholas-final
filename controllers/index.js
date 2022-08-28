@@ -137,6 +137,59 @@ const deleteSong = async (req,res) =>{
     }
 }
 
+const updateArtist = (req,res) =>{
+    try{
+        const {id} = req.params
+        Artist.findByIdAndUpdate(id, req.body, {new:true}, (err,artist)=>{
+            if(err){
+                res.status(500).send(err)
+            }
+            if(!artist){
+                res.status(500).send('Artist not found')
+            }
+            return res.status(200).json(artist)
+        })
+
+    }catch(error){
+        return res.status(500).send(err.message)
+    }
+}
+
+const updateAlbum = (req,res) =>{
+    try{
+        const {id} = req.params
+        Album.findByIdAndUpdate(id, req.body, {new:true}, (err,album)=>{
+            if(err){
+                res.status(500).send(err)
+            }
+            if(!album){
+                res.status(500).send('Album not found')
+            }
+            return res.status(200).json(album)
+        })
+
+    }catch(error){
+        return res.status(500).send(err.message)
+    }
+}
+
+const updateSong = (req,res) =>{
+    try{
+        const {id} = req.params
+        Song.findByIdAndUpdate(id, req.body, {new:true}, (err,song)=>{
+            if(err){
+                res.status(500).send(err)
+            }
+            if(!song){
+                res.status(500).send('Song not found')
+            }
+            return res.status(200).json(song)
+        })
+
+    }catch(error){
+        return res.status(500).send(err.message)
+    }
+}
 
 
 
@@ -157,6 +210,9 @@ module.exports={
     createAlbum,
     deleteAlbum,
     createSong,
-    deleteSong
+    deleteSong,
+    updateArtist,
+    updateAlbum,
+    updateSong
 
 }
