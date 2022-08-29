@@ -1,70 +1,243 @@
-# Getting Started with Create React App
+# MusicPot
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description 
+MusicPot is a an app that lets music lovers share their current favorite Artist, ALbum, or Song. Contribute to the melting pot of musical tastes from around the world by adding your own favorites, edit existing information which may be incorrect, or remove irrelevant entries.
 
-## Available Scripts
+## MVP
+- CRUD for managing music data.
+- Data models for Songs, Artists, and Albums,
+--Link models using IDs
 
-In the project directory, you can run:
+## Post MVP
+- Add a feature to listen to music or link to sources.
+- Add profile creation.
+- Restrict contribution to verified.
+- Add the ability for profiles to save music to a personal list.
+- Allow for user disscusion.
 
-### `npm start`
+## Features
+- View community curated list of music.
+- Add, remove, and edit list.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## API Endpoints
+All API calls will begin with "https://music-api-jsh.herokuapp.com/api"
+## Artists
+- Get all artists ( /artists )
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Example 
+```js
+axios.get("https://music-api-jsh.herokuapp.com/api/artists")
+```
 
-### `npm test`
+Response
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img width="924" alt="Get Artists" src="https://user-images.githubusercontent.com/105838964/187212654-918bc310-c124-497a-af1a-9391d29c06cd.png">
 
-### `npm run build`
+- Get artists by ID ( /artists/{id} )
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Example
+```js
+axios.get("https://music-api-jsh.herokuapp.com/api/artists/630665e593b460f268842700")
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Response
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img width="616" alt="Get Artists Id" src="https://user-images.githubusercontent.com/105838964/187212926-87f8d5a4-1637-4733-bb42-77c60ab16c6d.png">
 
-### `npm run eject`
+- Create Artist ( /artists )
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Example
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```js
+axios.post("https://music-api-jsh.herokuapp.com/api/artists")
+{
+  "name": "test name",
+  "image": "https://mui.com/static/images/avatar/1-sm.jpeg",
+  "genre": "test genre"
+}
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Response 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<img width="562" alt="Create Artist" src="https://user-images.githubusercontent.com/105838964/187216139-531490f0-8a59-4aee-bd23-3476ecf2a584.png">
 
-## Learn More
+- Update Artist ( /artists/{id} )
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Example 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```js
+axios.put("https://music-api-jsh.herokuapp.com/api/artists/630cc286374604208f1fc2e0")
+{
+  "name": "updated name",
+  "image": "https://mui.com/static/images/avatar/1-sm.jpeg",
+  "genre": "updated genre"
+}
+```
+<img width="552" alt="Update Artist" src="https://user-images.githubusercontent.com/105838964/187217700-2e820a30-ca07-4676-8fb0-64dd4b9335b3.png">
 
-### Code Splitting
+Delete Artist ( /artists/{id} )
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Example 
 
-### Analyzing the Bundle Size
+```js
+axios.delete("https://music-api-jsh.herokuapp.com/api/artists/630cc286374604208f1fc2e0")
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Response
 
-### Making a Progressive Web App
+<img width="238" alt="Delete Artist" src="https://user-images.githubusercontent.com/105838964/187219412-354869e6-bc77-479c-a609-9c17458aba70.png">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Albums
+- Get all albums ( /albums )
 
-### Advanced Configuration
+Example 
+```js
+axios.get("https://music-api-jsh.herokuapp.com/api/albums")
+```
+Response
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<img width="802" alt="Get all albums" src="https://user-images.githubusercontent.com/105838964/187220850-8570411a-e9a9-427e-85cf-cdc821203646.png">
 
-### Deployment
+- Get album by ID ( /albums/{id} )
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Example
+```js
+axios.get("https://music-api-jsh.herokuapp.com/api/63066689849caa5784b288ef")
+```
+Response
 
-### `npm run build` fails to minify
+<img width="712" alt="Get album by id" src="https://user-images.githubusercontent.com/105838964/187222096-3e4fbfc0-1d80-404d-ad06-ce450d809860.png">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Create Album ( /albums )
+
+Example 
+```js
+axios.post("https://music-api-jsh.herokuapp.com/api/albums")
+{
+  "artist": "Test Band",
+  "artist_id": "630665e593b460f268842701",
+  "name": "Test Album",
+  "image": "https://mui.com/static/images/avatar/1-sm.jpeg",
+  "tracks": 14,
+  "released": 2018,
+  "runtime": "85 minutes"
+}
+```
+Response
+
+<img width="670" alt="Create Album" src="https://user-images.githubusercontent.com/105838964/187223324-c4e9272a-5f29-48a0-8730-23bcb68a3b87.png">
+
+- Update Album ( /albums/{id} )
+
+Example
+```js
+axios
+{
+  "artist": "Updated Band",
+  "artist_id": "630665e593b460f268842701",
+  "name": "Updated Album",
+  "image": "https://mui.com/static/images/avatar/1-sm.jpeg",
+  "tracks": 100,
+  "released": 1900,
+  "runtime": "100 minutes"
+}
+```
+Resonse
+
+<img width="522" alt="Update Album" src="https://user-images.githubusercontent.com/105838964/187224242-d4bf3cda-7a9d-4584-a8c2-e4e9f46ff9cb.png">
+
+- Delete Album ( /albums/{id )
+
+Example
+```js
+axios.delete("https://music-api-jsh.herokuapp.com/api/albums/630ccaba374604208f1fc2e6")
+```
+
+Response
+
+<img width="199" alt="Delete album" src="https://user-images.githubusercontent.com/105838964/187225076-b75f7b17-316f-4d0c-8af7-882313887aee.png">
+
+## Songs
+- Get all songs ( /songs )
+
+Example
+```js
+axios.get("https://music-api-jsh.herokuapp.com/api/songs")
+```
+Response
+
+<img width="622" alt="Get all songs" src="https://user-images.githubusercontent.com/105838964/187225915-b97efd86-dff1-4b32-81d1-0b10371077c7.png">
+
+- Create Song ( /songs )
+
+Example
+```js
+axios.post("https://music-api-jsh.herokuapp.com/api/songs")
+{
+ "name": "Test Song",
+  "album_id": "63066689849caa5784b288eb",
+ "track_number": 5,
+  "length": "5:34"
+}
+```
+Response
+
+<img width="460" alt="Create Song" src="https://user-images.githubusercontent.com/105838964/187226998-b737859a-9669-4649-b9dc-9a62998308f6.png">
+
+- Update Song ( /songs/{id} )
+
+Example
+```js
+axios.put("https://music-api-jsh.herokuapp.com/api/songs/630ccee4374604208f1fc2eb")
+{
+ "name": "updated Song",
+ "album_id": "63066689849caa5784b288eb",
+ "track_number": 99,
+ "length": "10:20"
+}
+```
+Reponse
+
+<img width="416" alt="Update Song" src="https://user-images.githubusercontent.com/105838964/187227727-c085d696-2f6a-4031-aa73-734521bbf298.png">
+
+- Delete Song ( /songs/{id} )
+
+Example
+```js
+axios.delete("https://music-api-jsh.herokuapp.com/api/songs/630ccee4374604208f1fc2eb")
+```
+
+Response
+
+<img width="158" alt="Delete Song" src="https://user-images.githubusercontent.com/105838964/187228062-44cdf250-a99a-47ac-8410-7b9727937a99.png">
+
+
+## Wireframes
+See what everyones listeng to
+
+<img width="1261" alt="Community Page" src="https://user-images.githubusercontent.com/105838964/187242257-70c35dcc-c832-4956-a5b6-772dac3cdf02.png">
+
+Contribute our list of Artists, Albums, and Songs
+
+<img width="1280" alt="Contribute Page" src="https://user-images.githubusercontent.com/105838964/187243330-f76c024b-1dfd-43ba-a2e4-746cce1f892b.png">
+
+Edit Data
+
+<img width="299" alt="Edit" src="https://user-images.githubusercontent.com/105838964/187245654-4c5a37f4-8099-41d1-aaa0-2056aa01a4f6.png">
+
+<img width="298" alt="Edit 2" src="https://user-images.githubusercontent.com/105838964/187245663-d8d731f6-465d-4ed9-b3c4-83f2af5de4e9.png">
+
+
+## Component Hierarchy
+
+<img width="990" alt="Component Hierarchy" src="https://user-images.githubusercontent.com/105838964/187250717-0e96bc2e-b541-48fa-81b1-7a20e56f1fa2.png">
+
+
+## Dependencies
+Axios
+
+
+
+
+
+
