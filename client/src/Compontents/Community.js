@@ -30,7 +30,7 @@ const destroyArtist = (id) => {
       //  console.log(artists)
       //  setArtists(artists.filter(artist => artist._id !== id))
        window.location.reload(false)
-     }
+    }
 
 const destroyAlbum = (id) => {
       axios({
@@ -38,7 +38,7 @@ const destroyAlbum = (id) => {
          method: 'DELETE'
        }) 
        window.location.reload(false)
-     }
+    }
 
 const destroySong = (id) => {
       axios({
@@ -46,7 +46,7 @@ const destroySong = (id) => {
          method: 'DELETE'
        }) 
        window.location.reload(false)
-     }
+    }
 
     const fetchArtist = async () => {
         try{
@@ -88,7 +88,7 @@ const destroySong = (id) => {
         }catch(error){
             console.log(error)
         }
-      }
+    }
     const fetchAlbums = async () => {
       try{
         const response = await axios(`${apiUrl}/albums`)
@@ -153,9 +153,9 @@ const destroySong = (id) => {
       const id =(song._id)
       return(
         <div key={index}>
-      <h1>{song.name}</h1>
-      <button onClick={() => destroyAlbum(id)} >Delete Item</button>
-      <NavLink to={`/community/album/${id}/edit`}><button>Edit</button></NavLink>
+      <h1 className='Song'>{song.name}</h1>
+      <button onClick={() => destroySong(id)} >Delete Item</button>
+      <NavLink to={`/community/song/${id}/edit`}><button>Edit</button></NavLink>
       </div>
       )
     })
@@ -174,7 +174,7 @@ const destroySong = (id) => {
 
 
     return(
-    <div>
+    <div className='Community'>
         <h1>CHECK OUT WHAT THE COMMUNITY IS LISTENING TO NOW!</h1>
         <h3>ARTISTS</h3>
 

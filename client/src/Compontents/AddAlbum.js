@@ -9,7 +9,7 @@ function AddAlbum(){
 const navigate = useNavigate();
 const [album, setAlbum] = useState({
   artist:"",
-  artist_id:"",
+ 
   name:"",
   image:"",
   tracks:"",
