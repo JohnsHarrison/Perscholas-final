@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useParams, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from 'axios'
 import apiUrl from "../apiConfig";
 import * as React from 'react';
@@ -14,7 +14,6 @@ import { CardActionArea } from '@mui/material';
 
 
 function EditArtist(){
-    const navigate = useNavigate()
     const { id } = useParams()  //get the id from the current object to update
     const [results,setResults] = useState(null)
     const [artist, setArtist] = useState({
@@ -22,7 +21,6 @@ function EditArtist(){
         image:'',
         genre:''
     })
-    const [updated, setUpdated] = useState(false)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -51,15 +49,10 @@ function EditArtist(){
              url: `${apiUrl}/artists/${id}`,
              method: 'PUT',
              data: artist
-         }).then(() => setUpdated(true)).catch(console.error)
+         }).catch(console.error)
          setResults(artist)
     }
 
-    useEffect(() => {
-        if(updated) {
-            return navigate(`/community`)
-        }
-    },[id])
 
     return(
         <div className='EditPage'>

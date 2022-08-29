@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import apiUrl from "../apiConfig"
 import axios from 'axios';
@@ -7,7 +7,6 @@ import axios from 'axios';
 
 
 function EditSong(){
-    const navigate = useNavigate()
     const { id } = useParams()  //get the id from the current object to update
     const [results,setResults] = useState(null)
     const [song, setSong] = useState({
@@ -16,7 +15,6 @@ function EditSong(){
         length:"",
         explict:1,
     })
-    const [updated, setUpdated] = useState(false)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -45,15 +43,11 @@ function EditSong(){
              url: `${apiUrl}/songs/${id}`,
              method: 'PUT',
              data: song
-         }).then(() => setUpdated(true)).catch(console.error)
+         }).catch(console.error)
          setResults(song)
     }
 
-    useEffect(() => {
-        if(updated) {
-            return navigate(`/community`)
-        }
-    },[id])
+  
 
     return(
      

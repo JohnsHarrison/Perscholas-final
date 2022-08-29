@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useParams, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from 'axios'
 import apiUrl from "../apiConfig";
 import * as React from 'react';
@@ -14,7 +14,6 @@ import { CardActionArea } from '@mui/material';
 
 
 function EditAlbum(){
-    const navigate = useNavigate()
     const { id } = useParams()  //get the id from the current object to update
     const [results,setResults] = useState(null)
     const [album, setAlbum] = useState({
@@ -26,7 +25,6 @@ function EditAlbum(){
         released:"",
         runtime:""
     })
-    const [updated, setUpdated] = useState(false)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -40,7 +38,7 @@ function EditAlbum(){
        }
       }
       fetchData()
-    }, [id])
+    }, [id,results])
 
     const handleChange = (event) => {
   
@@ -57,15 +55,11 @@ function EditAlbum(){
              url: `${apiUrl}/albums/${id}`,
              method: 'PUT',
              data: album
-         }).then(() => setUpdated(true)).catch(console.error)
+         }).catch(console.error)
          setResults(album)
     }
 
-    useEffect(() => {
-        if(updated) {
-            return navigate(`/community`)
-        }
-    },[id])
+
 
     return(
         <div className="EditPage">
