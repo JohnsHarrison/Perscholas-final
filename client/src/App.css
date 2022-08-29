@@ -5,6 +5,11 @@
   background-color: lightblue;
 }
 
+.NavBar{
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .CommunityCard{
   margin: 5px;
 }

@@ -175,19 +175,20 @@ const destroySong = (id) => {
 
     return(
     <div className='Community'>
-        <h1>CHECK OUT WHAT THE COMMUNITY IS LISTENING TO NOW!</h1>
-        <h3>ARTISTS</h3>
+      <h1>CHECK OUT WHAT THE COMMUNITY IS LISTENING TO NOW!</h1>
+      <h3>ARTISTS</h3>
 
       <div className='CommunityCardContainer' >
         {artists}
       </div>
 
-        <h3>ALBUMS</h3>
+      <h3>ALBUMS</h3>
 
        <div className='CommunityCardContainer'>
           {albums}
        </div>
 
+       <h3>SONGS</h3>
        {songs}
 
     </div>
