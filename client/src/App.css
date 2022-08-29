@@ -1,24 +1,47 @@
 .App {
   text-align: center;
+  height: 100vh;
+  width: 100%;
+  background-color: lightblue;
 }
 
 .CommunityCard{
   margin: 5px;
 }
 
+.Community{
+  background-color: lightblue;
+  padding: 10px;
+}
+.Song{
+  margin-bottom: 5px;
+}
+
+.EditCard{
+  margin:auto
+}
+
 .CommunityCardContainer{
   display: flex;
   justify-content: space-evenly;
-  flex-wrap: wr
-  ap;
 } 
 
 form{
   display: flex;
   flex-direction: column;
+  margin: auto;
 }
 
 .Contribute{
   display:flex;
   justify-content:space-evenly;
+}
+
+.EditForm{
+  width: 50%;
+}
+
+.EditPage{
+  display: flex;
+  flex-direction: column;
 }
