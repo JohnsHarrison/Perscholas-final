@@ -162,7 +162,7 @@ Response
 
 Example
 ```js
-axios.get(https://music-api-jsh.herokuapp.com/api/songs)
+axios.get("https://music-api-jsh.herokuapp.com/api/songs")
 ```
 Response
 
