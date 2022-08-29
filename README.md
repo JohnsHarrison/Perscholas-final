@@ -49,7 +49,7 @@ Response
 Example
 
 ```js
-axios.post(https://music-api-jsh.herokuapp.com/api/artists)
+axios.post("https://music-api-jsh.herokuapp.com/api/artists")
 {
   "name": "test name",
   "image": "https://mui.com/static/images/avatar/1-sm.jpeg",
@@ -66,7 +66,7 @@ Response
 Example 
 
 ```js
-axios.put(https://music-api-jsh.herokuapp.com/api/artists/630cc286374604208f1fc2e0)
+axios.put("https://music-api-jsh.herokuapp.com/api/artists/630cc286374604208f1fc2e0")
 {
   "name": "updated name",
   "image": "https://mui.com/static/images/avatar/1-sm.jpeg",
@@ -80,7 +80,7 @@ Delete Artist ( /artists/{id} )
 Example 
 
 ```js
-axios.delete(https://music-api-jsh.herokuapp.com/api/artists/630cc286374604208f1fc2e0)
+axios.delete("https://music-api-jsh.herokuapp.com/api/artists/630cc286374604208f1fc2e0")
 ```
 
 Response
@@ -92,7 +92,7 @@ Response
 
 Example 
 ```js
-axios.get(https://music-api-jsh.herokuapp.com/api/albums)
+axios.get("https://music-api-jsh.herokuapp.com/api/albums")
 ```
 Response
 
@@ -102,7 +102,7 @@ Response
 
 Example
 ```js
-axios.get(https://music-api-jsh.herokuapp.com/api/63066689849caa5784b288ef)
+axios.get("https://music-api-jsh.herokuapp.com/api/63066689849caa5784b288ef")
 ```
 Response
 
@@ -112,7 +112,7 @@ Response
 
 Example 
 ```js
-axios.post(https://music-api-jsh.herokuapp.com/api/albums)
+axios.post("https://music-api-jsh.herokuapp.com/api/albums")
 {
   "artist": "Test Band",
   "artist_id": "630665e593b460f268842701",
@@ -150,7 +150,7 @@ Resonse
 
 Example
 ```js
-axios.delete(https://music-api-jsh.herokuapp.com/api/albums/630ccaba374604208f1fc2e6)
+axios.delete("https://music-api-jsh.herokuapp.com/api/albums/630ccaba374604208f1fc2e6")
 ```
 
 Response
@@ -172,7 +172,7 @@ Response
 
 Example
 ```js
-axios.post(https://music-api-jsh.herokuapp.com/api/songs)
+axios.post("https://music-api-jsh.herokuapp.com/api/songs")
 {
  "name": "Test Song",
   "album_id": "63066689849caa5784b288eb",
@@ -188,7 +188,7 @@ Response
 
 Example
 ```js
-axios.put(https://music-api-jsh.herokuapp.com/api/songs/630ccee4374604208f1fc2eb)
+axios.put("https://music-api-jsh.herokuapp.com/api/songs/630ccee4374604208f1fc2eb")
 {
  "name": "updated Song",
  "album_id": "63066689849caa5784b288eb",
@@ -204,12 +204,40 @@ Reponse
 
 Example
 ```js
-axios.delete(https://music-api-jsh.herokuapp.com/api/songs/630ccee4374604208f1fc2eb)
+axios.delete("https://music-api-jsh.herokuapp.com/api/songs/630ccee4374604208f1fc2eb")
 ```
 
 Response
 
 <img width="158" alt="Delete Song" src="https://user-images.githubusercontent.com/105838964/187228062-44cdf250-a99a-47ac-8410-7b9727937a99.png">
+
+
+## Wireframes
+See what everyones listeng to
+
+<img width="1261" alt="Community Page" src="https://user-images.githubusercontent.com/105838964/187242257-70c35dcc-c832-4956-a5b6-772dac3cdf02.png">
+
+Contribute our list of Artists, Albums, and Songs
+
+<img width="1280" alt="Contribute Page" src="https://user-images.githubusercontent.com/105838964/187243330-f76c024b-1dfd-43ba-a2e4-746cce1f892b.png">
+
+Edit Data
+
+<img width="299" alt="Edit" src="https://user-images.githubusercontent.com/105838964/187245654-4c5a37f4-8099-41d1-aaa0-2056aa01a4f6.png">
+
+<img width="298" alt="Edit 2" src="https://user-images.githubusercontent.com/105838964/187245663-d8d731f6-465d-4ed9-b3c4-83f2af5de4e9.png">
+
+
+## Component Hierarchy
+
+<img width="990" alt="Component Hierarchy" src="https://user-images.githubusercontent.com/105838964/187250717-0e96bc2e-b541-48fa-81b1-7a20e56f1fa2.png">
+
+
+## Dependencies
+Axios
+
+
+
 
 
 
