@@ -6,7 +6,7 @@ MusicPot is a an app that lets music lovers share their current favorite Artist,
 ## MVP
 - CRUD for managing music data.
 - Data models for Songs, Artists, and Albums,
---Link models using IDs
+- Link models using IDs
 
 ## Post MVP
 - Add a feature to listen to music or link to sources.
