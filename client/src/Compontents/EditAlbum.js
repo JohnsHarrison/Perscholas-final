@@ -32,7 +32,6 @@ function EditAlbum(){
         const fetchData = async () => {
        try {
            const response = await axios(`${apiUrl}/artists/${id}`)
-           setResults(response.data)
            setAlbum(response.data)
           
            console.log(results)
@@ -59,6 +58,7 @@ function EditAlbum(){
              method: 'PUT',
              data: album
          }).then(() => setUpdated(true)).catch(console.error)
+         setResults(album)
     }
 
     useEffect(() => {
@@ -68,9 +68,11 @@ function EditAlbum(){
     },[id])
 
     return(
-        <div>
+        <div className="EditPage">
            {
-            results ?  <div className="CommunityCard">
+            results === null ? null:
+             <div className="EditCard">
+                <h2>Album is now</h2>
            <Card sx={{ maxWidth: 345 }}>
             <CardActionArea>
                 <CardMedia
@@ -92,8 +94,10 @@ function EditAlbum(){
                 </CardContent>
               </CardActionArea>
             </Card>
-          </div> : null
+          </div> 
            }
+           {
+            results === null ? 
 
 <form onSubmit={(e) => handleSubmit(e)}>
         <label>Artist Name *</label>
@@ -153,6 +157,10 @@ function EditAlbum(){
         </Link>
 
     </form>
+    :<Link to={"/community"}>
+    <button>Go Back</button>
+        </Link>
+}
 
         </div>
     )

@@ -6,6 +6,7 @@ import NavBar from './Compontents/NavBar';
 import Contribute from './Compontents/Contribute';
 import EditArtist from './Compontents/EditArtist';
 import EditAlbum from './Compontents/EditAlbum';
+import EditSong from './Compontents/EditSong';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/contribute' element={<Contribute/>}/>
         <Route path='/community/artist/:id/edit' element={<EditArtist/>}/>
         <Route path='/community/album/:id/edit' element={<EditAlbum/>}/>
+        <Route path='/community/song/:id/edit' element={<EditSong/>}/>
       </Routes>
     </div>
   );

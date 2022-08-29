@@ -28,10 +28,7 @@ function EditArtist(){
         const fetchData = async () => {
        try {
            const response = await axios(`${apiUrl}/artists/${id}`)
-           setResults(response.data)
            setArtist(response.data)
-           console.log(artist)
-           console.log(results)
        } catch (error) {
            console.log(error)
        }
@@ -55,6 +52,7 @@ function EditArtist(){
              method: 'PUT',
              data: artist
          }).then(() => setUpdated(true)).catch(console.error)
+         setResults(artist)
     }
 
     useEffect(() => {
@@ -64,9 +62,11 @@ function EditArtist(){
     },[id])
 
     return(
-        <div>
+        <div className='EditPage'>
            {
-            results ?  <div className="CommunityCard">
+             results === null ? null :
+              <div className="EditCard">
+             <h2>Artist is now </h2>  
             <Card sx={{ maxWidth: 345 }}>
             <CardActionArea>
                 <CardMedia
@@ -85,8 +85,10 @@ function EditArtist(){
                 </CardContent>
               </CardActionArea>
             </Card>
-          </div> : null
+          </div> 
            }
+           {
+            results === null ?
 
              <form onSubmit={(e) => handleSubmit(e)}>
         <label>Artist</label>
@@ -117,6 +119,10 @@ function EditArtist(){
         </Link>
 
     </form>
+    : <Link to={"/community"}>
+    <button>Go Back</button>
+        </Link>
+}
 
         </div>
     )
