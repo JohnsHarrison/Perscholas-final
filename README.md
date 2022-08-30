@@ -260,11 +260,11 @@ Edit Data
 
 
 ## Dependencies
-Axios
-Cors
-Express
-Mongoose
-Morgan
+- Axios
+- Cors
+- Express
+- Mongoose
+- Morgan
 
 
 
