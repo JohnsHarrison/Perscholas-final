@@ -63,7 +63,7 @@ useEffect(() => {
   }
   fetchAlbums(id)
   fetchArtist(id)
-}, [])
+}, [id])
 
 
     return(

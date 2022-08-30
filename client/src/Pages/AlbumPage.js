@@ -23,7 +23,6 @@ useEffect(() => {
   const fetchSongs = async (id) =>{
     const response =  await axios(`${apiUrl}/songs/${id}/album`)
     const songs = (response.data.song)
-    console.log(songs)
     const mappedSongs = songs.map((song,index)=>{
         return(<div key={index}>
             <h2>{song.track_number}: {song.name} {song.length}</h2>
@@ -36,7 +35,7 @@ useEffect(() => {
   }
   fetchAlbum(id)
   fetchSongs(id)
-}, [])
+}, [id])
 
 
     return(
@@ -53,15 +52,6 @@ useEffect(() => {
 
             {song} 
 
-            {/* <div className="Song-P">
-            <p>Tracks:{album.tracks}</p>
-            <p>Released:{album.released}</p>
-            <p>Runtime:{album.runtime}</p>
-            </div> */}
-           
-            {/* <div className='AlbumPage'>
-             {song} 
-            </div> */}
             </div>
             }
         </div>

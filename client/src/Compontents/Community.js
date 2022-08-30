@@ -96,7 +96,6 @@ const fetchAlbums = async () => {
       try{
         const response = await axios(`${apiUrl}/albums`)
         const results = response.data.albums
-        console.log(results)
         const mappedAlbums = results.map((album,index)=>{
           const id =(album._id)
           return(
@@ -143,8 +142,6 @@ const fetchSongs = async () => {
       try{
         const response = await axios(`${apiUrl}/songs`)
         const results = response.data.songs
-        console.log(results.length)
-        console.log(results)
         for(let i = 0; i < 20 ; i++){
           let random = Math.floor(Math.random() * results.length)
           list.push(results[random])
