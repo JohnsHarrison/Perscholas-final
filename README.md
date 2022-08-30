@@ -1,12 +1,14 @@
-# MusicPot
+# MusicBook
+
+![Frame 6](https://user-images.githubusercontent.com/105838964/187516280-b35bd3a0-48ec-4ff7-81d8-f323edb67aaa.png)
 
 ## Description 
-MusicPot is a an app that lets music lovers share their current favorite Artist, ALbum, or Song. Contribute to the melting pot of musical tastes from around the world by adding your own favorites, edit existing information which may be incorrect, or remove irrelevant entries.
+MusicBook is a an app that lets music lovers share their current favorite Artist, ALbum, or Song. Contribute to the melting pot of musical tastes from around the world by adding your own favorites, edit existing information which may be incorrect, or remove irrelevant entries.
 
 ## MVP
 - CRUD for managing music data.
 - Data models for Songs, Artists, and Albums,
---Link models using IDs
+- Link models using IDs
 
 ## Post MVP
 - Add a feature to listen to music or link to sources.
