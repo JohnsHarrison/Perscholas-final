@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState,useEffect } from 'react';
-import { useNavigate,NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import apiUrl from "../apiConfig"
 import axios from "axios"
 import Card from '@mui/material/Card';
@@ -14,7 +14,6 @@ function Community(){
 const [artists,setArtists] = useState()
 const [albums,setAlbums] = useState()
 const [songs,setSongs] = useState()
-const navigate = useNavigate() 
 
 
 
@@ -48,7 +47,7 @@ const destroySong = (id) => {
        window.location.reload(false)
     }
 
-    const fetchArtist = async () => {
+const fetchArtist = async () => {
         try{
             const response = await axios(`${apiUrl}/artists`)
             const results = response.data.artists
@@ -57,6 +56,7 @@ const destroySong = (id) => {
                 return( 
                   <div>
                     <div className="CommunityCard"key={index}>
+                    <NavLink to={`/community/artist/${id}`}>
                       <Card sx={{ maxWidth: 345 }}>
                       <CardActionArea>
                           <CardMedia
@@ -65,6 +65,7 @@ const destroySong = (id) => {
                             image={artist.image}
                             alt=""
                       />
+                      
                           <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
                             {artist.name}
@@ -75,6 +76,7 @@ const destroySong = (id) => {
                           </CardContent>
                         </CardActionArea>
                       </Card>
+                      </NavLink>
                     </div>
                         <button onClick={() => destroyArtist(id)} >Delete Item</button>
                        <NavLink to={`/community/artist/${id}/edit`}><button>Edit</button></NavLink>
@@ -89,7 +91,8 @@ const destroySong = (id) => {
             console.log(error)
         }
     }
-    const fetchAlbums = async () => {
+
+const fetchAlbums = async () => {
       try{
         const response = await axios(`${apiUrl}/albums`)
         const results = response.data.albums
@@ -98,6 +101,7 @@ const destroySong = (id) => {
           const id =(album._id)
           return(
             <div className="CommunityCard"key={index}>
+            <NavLink to={`/community/album/${id}`}>
             <Card sx={{ maxWidth: 345 }}>
             <CardActionArea>
                 <CardMedia
@@ -119,6 +123,7 @@ const destroySong = (id) => {
                 </CardContent>
               </CardActionArea>
             </Card>
+            </NavLink>
             <button onClick={() => destroyAlbum(id)} >Delete Item</button>
             <NavLink to={`/community/album/${id}/edit`}><button>Edit</button></NavLink>
           </div>
@@ -133,7 +138,7 @@ const destroySong = (id) => {
     }
     }
 
-    const fetchSongs = async () => {
+const fetchSongs = async () => {
       const list =[]
       try{
         const response = await axios(`${apiUrl}/songs`)
@@ -165,7 +170,7 @@ const destroySong = (id) => {
  fetchArtist()
  fetchAlbums()
  fetchSongs()
- },[navigate])
+ },[])
  
 
 

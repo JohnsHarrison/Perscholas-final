@@ -5,7 +5,7 @@ import AddSong from './AddSong';
 function Contribute(){
 
     return(
-    <div>
+    <div className='ContributeContainer'>
       <h1>Contribute to the community</h1>
       <p>Values marked with * required</p>
         <div className='Contribute'>

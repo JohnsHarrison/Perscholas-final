@@ -52,7 +52,7 @@ function EditSong(){
     return(
      
 
-        <div className='EditPage' >
+        <div style={{width:"50%"}} className='EditPage' >
             {
                 results === null ? null : 
                 <div>

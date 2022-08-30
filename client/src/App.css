@@ -10,6 +10,10 @@
   justify-content: space-evenly;
 }
 
+.ContributeContainer{
+  overflow: hidden;
+}
+
 .CommunityCard{
   margin: 5px;
 }
@@ -29,6 +33,7 @@
 .CommunityCardContainer{
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 } 
 
 form{
@@ -49,4 +54,29 @@ form{
 .EditPage{
   display: flex;
   flex-direction: column;
+}
+
+.ArtistPage{
+  display: flex;
+  justify-content: space-evenly;
+  background-color: lightblue;
+}
+
+
+.AlbumPage{
+  display: flex;
+  flex-direction: column;
+  background-color: lightblue;
+}
+
+.Song-P{
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  margin: auto;
+}
+
+.PageImage{
+  width: 50%;
+  margin: auto;
 }

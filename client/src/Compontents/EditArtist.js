@@ -58,6 +58,7 @@ function EditArtist(){
         <div className='EditPage'>
            {
              results === null ? null :
+             <div style={{height:'100vh'}}>
               <div className="EditCard">
              <h2>Artist is now </h2>  
             <Card sx={{ maxWidth: 345 }}>
@@ -79,6 +80,7 @@ function EditArtist(){
               </CardActionArea>
             </Card>
           </div> 
+          </div>
            }
            {
             results === null ?
