@@ -191,6 +191,38 @@ const updateSong = (req,res) =>{
     }
 }
 
+const getAlbumsByArtist = async (req,res) =>{
+    try{
+        const {id} = req.params
+        const album = await Album.find({artist_id:id})
+        if(album){
+            return res.status(200).json({album})
+           }
+           return res.status(404).send('No Albums found')
+    
+
+    }catch(error){
+        return res.status(500).send(error.message)
+    }
+
+}
+
+const getSongsByAlbum = async (req,res) =>{
+    try{
+        const {id} = req.params
+        const song = await Song.find({album_id:id})
+        if(song){
+            return res.status(200).json({song})
+           }
+           return res.status(404).send('No Albums found')
+    
+
+    }catch(error){
+        return res.status(500).send(error.message)
+    }
+
+}
+
 
 
 
@@ -213,6 +245,8 @@ module.exports={
     deleteSong,
     updateArtist,
     updateAlbum,
-    updateSong
+    updateSong,
+    getAlbumsByArtist,
+    getSongsByAlbum
 
 }
