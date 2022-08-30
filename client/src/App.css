@@ -8,6 +8,32 @@
 .NavBar{
   display: flex;
   justify-content: space-evenly;
+  height: 8%;
+}
+
+.NavBar a{
+  margin-right: 10px;
+  align-self: center;
+}
+
+.NavImg{
+  width: 5%;
+  position: absolute;
+  left: 0;
+  top:0;
+}
+
+.NavContainer{
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+
+
+
+.Footer img{
+  width: 3%;
+  margin-left: 10px;
 }
 
 .ContributeContainer{
