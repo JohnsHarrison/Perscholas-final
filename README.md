@@ -1,7 +1,7 @@
-# MusicPot
+# MusicBook
 
 ## Description 
-MusicPot is a an app that lets music lovers share their current favorite Artist, ALbum, or Song. Contribute to the melting pot of musical tastes from around the world by adding your own favorites, edit existing information which may be incorrect, or remove irrelevant entries.
+MusicBook is a an app that lets music lovers share their current favorite Artist, ALbum, or Song. Contribute to the melting pot of musical tastes from around the world by adding your own favorites, edit existing information which may be incorrect, or remove irrelevant entries.
 
 ## MVP
 - CRUD for managing music data.
