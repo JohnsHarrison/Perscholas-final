@@ -111,6 +111,17 @@ Response
 
 <img width="712" alt="Get album by id" src="https://user-images.githubusercontent.com/105838964/187222096-3e4fbfc0-1d80-404d-ad06-ce450d809860.png">
 
+- Get Albums by Artist ID ( /albums/{id}/artist )
+
+Example
+ ```js
+ axios.get("https://music-api-jsh.herokuapp.com/api/albums/630665e593b460f2688426fd/artist")
+ ```
+ Response
+ 
+<img width="612" alt="Get Albums By Artist" src="https://user-images.githubusercontent.com/105838964/187562200-094272fa-756c-42c7-b4b9-56222731c1a5.png">
+
+
 - Create Album ( /albums )
 
 Example 
@@ -170,6 +181,18 @@ axios.get("https://music-api-jsh.herokuapp.com/api/songs")
 Response
 
 <img width="622" alt="Get all songs" src="https://user-images.githubusercontent.com/105838964/187225915-b97efd86-dff1-4b32-81d1-0b10371077c7.png">
+
+- Get songs by Album ID ( /songs/{id}/album )
+
+Example
+```js
+axios.get("https://music-api-jsh.herokuapp.com/api/songs/63066689849caa5784b288eb/album")
+```
+Response
+
+<img width="577" alt="Get Songs By Album ID" src="https://user-images.githubusercontent.com/105838964/187562669-4afc1494-49be-4c4a-a63e-ba9d2867b92c.png">
+
+
 
 - Create Song ( /songs )
 
@@ -238,6 +261,11 @@ Edit Data
 
 ## Dependencies
 Axios
+Cors
+Express
+Mongoose
+Morgan
+
 
 
 
