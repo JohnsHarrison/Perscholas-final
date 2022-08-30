@@ -1,6 +1,7 @@
 # MusicBook
 
-![Frame 6](https://user-images.githubusercontent.com/105838964/187516280-b35bd3a0-48ec-4ff7-81d8-f323edb67aaa.png)
+![logo_final](https://user-images.githubusercontent.com/105838964/187538558-d86b0dc1-85d8-4754-b920-fc844a28701c.png)
+
 
 ## Description 
 MusicBook is a an app that lets music lovers share their current favorite Artist, ALbum, or Song. Contribute to the melting pot of musical tastes from around the world by adding your own favorites, edit existing information which may be incorrect, or remove irrelevant entries.
