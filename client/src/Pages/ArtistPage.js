@@ -68,7 +68,7 @@ useEffect(() => {
 
     return(
         <div>
-            { artist === null ? null :<div style={{backgroundcolor:"lightblue"}}>
+            { artist === null ? null :<div className="ArtistContainer">
             <h1>{artist.name}</h1>
             <img className="PageImage" alt="" src={artist.image}></img>
             <h2>{artist.genre}</h2>

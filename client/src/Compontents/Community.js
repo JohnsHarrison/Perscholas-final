@@ -150,7 +150,6 @@ const fetchSongs = async () => {
       }catch(error){
         console.log(error)
     }
-    console.log(list)
     const mappedSongs = list.map((song,index)=>{
       const id =(song._id)
       return(
