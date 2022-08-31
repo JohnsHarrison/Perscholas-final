@@ -14,7 +14,7 @@ MusicBook is a an app that lets music lovers share their current favorite Artist
 ## Post MVP
 - Add a feature to listen to music or link to sources.
 - Add profile creation.
-- Restrict contribution to verified.
+- Restrict contribution to verified users.
 - Add the ability for profiles to save music to a personal list.
 - Allow for user disscusion.
 
