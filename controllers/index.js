@@ -1,6 +1,8 @@
 const Album = require('../models/album')
 const Artist = require('../models/artist')
 const Song = require('../models/song')
+const User = require('../models/users')
+const bcrypt = require('bcrypt')
 
 const getAllAlbums = async (req,res) =>{
     try{
@@ -224,6 +226,72 @@ const getSongsByAlbum = async (req,res) =>{
 }
 
 
+const getUsers = async(req,res) =>{
+    try{
+        const users = await User.find()
+        return res.status(200).json({users})
+    }catch(error){
+        return res.status(500).send(error.message)
+    }
+}
+
+
+const createUser = async (req,res) =>{
+    const {name,email,password:plainTextPassword}=req.body;
+    const password = await bcrypt.hash(plainTextPassword,10);
+    try{
+        const user =  new User({
+            name:name,
+            email:email,
+            password:password
+        })
+     await user.save()
+     return res.status(201).json({
+        user,
+     })
+    }catch(error){
+     return res.status(500).send("Email already used")
+    }
+
+}
+
+const deleteUser = async (req,res) =>{
+    try{
+        const {id} = req.params
+        const deleted = await User.findByIdAndDelete(id)
+        if(deleted){
+            return res.status(200).send("User deleted")
+        }
+        throw new Error("User not found")
+    }catch(error){
+        return res.status(500).send(error.message)
+    }
+}
+
+const login = async (req,res) =>{
+    const user = await User.findOne({email:req.body.email})
+    if(!req.body.email){
+        return res.status(400).send("Please enter email")
+    }
+
+    if(!user){
+        return res.status(400).send("User not found") 
+    }
+    try{
+        if(await bcrypt.compare(req.body.password, user.password)){
+            // const accessToken = jwt.sign(userName,process.env.ACCESS_TOKEN_SECRET)
+            // return res.status(200).json({accessToken: accessToken})
+            return res.status(200).json({user})
+        }else{
+            return res.status(404).send('Password incorrect')
+        }
+    }catch(error){
+        return res.status(500).send(error.message)
+    }
+}
+
+
+
 
 
 
@@ -232,6 +300,7 @@ const getSongsByAlbum = async (req,res) =>{
 
 
 module.exports={
+    // music routes
     getAllAlbums,
     getAllArtists,
     getAllSongs,
@@ -247,6 +316,10 @@ module.exports={
     updateAlbum,
     updateSong,
     getAlbumsByArtist,
-    getSongsByAlbum
-
+    getSongsByAlbum,
+    // user routes
+    getUsers,
+    createUser,
+    deleteUser,
+    login
 }

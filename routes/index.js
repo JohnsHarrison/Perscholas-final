@@ -25,6 +25,10 @@ router.post('/songs', controllers.createSong)
 router.delete('/songs/:id', controllers.deleteSong)
 router.put('/songs/:id', controllers.updateSong)
 
-
+//user 
+router.get('/users', controllers.getUsers)
+router.post('/register', controllers.createUser)
+router.post('/login',controllers.login)
+router.delete("/users/:id", controllers.deleteUser)
 
 module.exports = router;
