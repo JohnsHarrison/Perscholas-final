@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
   height: 100vh;
@@ -5,31 +9,11 @@
   background-color: lightblue;
 }
 
-.NavBar{
-  display: flex;
-  justify-content: space-evenly;
-  height: 8%;
-}
-
-.NavBar a{
-  margin-right: 10px;
-  align-self: center;
-}
-
-.NavImg{
-  width: 5%;
-  position: absolute;
-  left: 0;
-  top:0;
-}
-
 .NavContainer{
   display: flex;
   align-content: center;
   justify-content: space-between;
 }
-
-
 
 .Footer img{
   width: 3%;
@@ -143,4 +127,59 @@ form{
 
 .SubmitButton:hover{
   background-color: #029660
+}
+
+.ProfileContainer{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width:200px;
+  background-color: #7e8dd1;
+  filter: drop-shadow(2px 4px 6px black);
+  padding: 10px;
+  align-items: center;
+}
+
+.ProfileInnerContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.ProfileButton{
+  text-decoration: underline;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+.ProfileButton:hover{
+  text-decoration: none;
+  background: red;
+  color: white;
+  border: black;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.NavLinks{
+  display: flex;
+  flex-direction: column;
+}
+
+.NavLinks a{
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: black;
+}
+
+.NavLinks a:hover{
+  background-color: black;
+  color: white;
 }

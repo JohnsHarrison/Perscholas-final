@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import apiUrl from '../apiConfig';
@@ -13,7 +13,6 @@ function Login(props){
         password:"",
     })
 
-    const [loggedIn,SetLoggedIn] = useState(props.currentUser)
 
     const handleChange = (event) => {
         const updatedField = { [event.target.name] : event.target.value }
@@ -30,10 +29,9 @@ async function handleSubmit(event){
         }).catch(error =>alert(error.response.data))
         // .then(res => props.setCurrentUser(res.data.user.name)).catch(console.error)
       if(response.data){
-        props.setCurrentUser(response.data.user.name)
-        sessionStorage.setItem('user',response.data.user.name)
+        props.setCurrentUser(response.data.user)
+        sessionStorage.setItem('user',JSON.stringify(response.data.user))
         navigate('/')
-        // props.setUserLoggedIn(true)
       }
       }
 

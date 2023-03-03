@@ -12,22 +12,19 @@ import AlbumPage from './Pages/AlbumPage';
 import Login from './Pages/Login';
 import { useState,useEffect } from 'react';
 import Register from './Pages/Regsiter';
+import UserProfile from './Compontents/UserProfile';
 
 function App() {
-  const [userLoggedIn, setUserLoggedIn] = useState(false)
+
   const [currentUser, setCurrentUser] = useState(null)
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    sessionStorage.clear()
-    window.location.reload()
-  };
 
 
   useEffect(() => {
     const loggedInUser = sessionStorage.getItem("user");
     if (loggedInUser) {
-      setCurrentUser(loggedInUser);
+      setCurrentUser(JSON.parse(loggedInUser));
       navigate('/')
     }else{
       navigate('/login')
@@ -36,20 +33,18 @@ function App() {
 
   return (
     <div className="App">
-      
-      {currentUser}
       {
         !currentUser ? 
         <>
           <Routes>
-            <Route path='login' element={<Login setUserLoggedIn = {setUserLoggedIn} setCurrentUser= {setCurrentUser}  currentUser={currentUser}/>}/>
+            <Route path='login' element={<Login setCurrentUser= {setCurrentUser}  currentUser={currentUser}/>}/>
             <Route path = 'register' element={<Register />}/>
            
           </Routes>
-          <button >Register</button>
         </>: 
         <>
-      <NavBar/>
+      {/* <NavBar/> */}
+      <UserProfile  currentUser={currentUser} />
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/community' element={<Community/>}/>
@@ -63,7 +58,6 @@ function App() {
       </Routes>
       </>
       }
-      <button onClick={handleLogout}> Log out</button>
     </div>
   );
 }
