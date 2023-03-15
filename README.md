@@ -8,6 +8,13 @@ https://musicbook.netlify.app/
 ## Description 
 MusicBook is a an app that lets music lovers share their current favorite Artist, Album, or Song. Contribute to the melting pot of musical tastes from around the world by adding your own favorites, edit existing information which may be incorrect, or remove irrelevant entries.
 
+## Example Profile
+To view the project without making an account you can use the test profile.
+
+Email - example@email.com
+
+Password - password
+
 ## MVP
 - CRUD for managing music data.
 - Data models for Songs, Artists, and Albums,
@@ -15,8 +22,6 @@ MusicBook is a an app that lets music lovers share their current favorite Artist
 
 ## Post MVP
 - Add a feature to listen to music or link to sources.
-- Add profile creation.
-- Restrict contribution to verified users.
 - Add the ability for profiles to save music to a personal list.
 - Allow for user disscusion.
 
@@ -254,11 +259,6 @@ Edit Data
 <img width="299" alt="Edit" src="https://user-images.githubusercontent.com/105838964/187245654-4c5a37f4-8099-41d1-aaa0-2056aa01a4f6.png">
 
 <img width="298" alt="Edit 2" src="https://user-images.githubusercontent.com/105838964/187245663-d8d731f6-465d-4ed9-b3c4-83f2af5de4e9.png">
-
-
-## Component Hierarchy
-
-<img width="990" alt="Component Hierarchy" src="https://user-images.githubusercontent.com/105838964/187250717-0e96bc2e-b541-48fa-81b1-7a20e56f1fa2.png">
 
 
 ## Dependencies

@@ -9,14 +9,13 @@ import EditSong from './Compontents/EditSong';
 import ArtistPage from './Pages/ArtistPage';
 import AlbumPage from './Pages/AlbumPage';
 import Login from './Pages/Login';
-import { useState,useEffect } from 'react';
+import { useState } from 'react';
 import Register from './Pages/Regsiter';
 import UserProfile from './Compontents/UserProfile';
 
 function App() {
 
   const [currentUser, setCurrentUser] = useState(null)
-  const navigate = useNavigate();
   const loggedInUser = sessionStorage.getItem("user");
 
   return (

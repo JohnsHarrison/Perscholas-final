@@ -51,7 +51,7 @@ console.log(artist)
   }
   fetchAlbums(id)
   fetchArtist(id)
-}, [id])
+}, [id,artist])
 
 const destroyArtist = (id) => {
   axios({
