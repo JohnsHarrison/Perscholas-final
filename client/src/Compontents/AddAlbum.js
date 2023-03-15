@@ -21,14 +21,12 @@ const [album, setAlbum] = useState({
 const [createdAlbum, setCreatedAlbum] = useState(null)
 
     const handleChange = (event) => {
-      console.log(album)
         //created a placeholder grabbing the value from the user input form
         const updatedField = { [event.target.name] : event.target.value }
         //assigned the empty state with the updatedField into one object
         const editedAlbum = Object.assign(album, updatedField)
         //assigned the new object to be updated to the state
         setAlbum(editedAlbum)
-        console.log(album)
       }
       
       const handleSubmit = (event) => {
@@ -61,7 +59,7 @@ const [createdAlbum, setCreatedAlbum] = useState(null)
         placeholder="Artist Name"
         defaultValue={album.artist}
         name="artist"
-        onChange={(e) => handleChange(e)} />
+        onChange={(e) => handleChange(e)} required />
 
         <label>Artist ID</label>
         <input
@@ -75,7 +73,7 @@ const [createdAlbum, setCreatedAlbum] = useState(null)
         placeholder="Album Name"
         defaultValue={album.name}
         name="name"
-        onChange={(e) => handleChange(e)} />
+        onChange={(e) => handleChange(e)} required />
 
         <label>Image</label>
         <input

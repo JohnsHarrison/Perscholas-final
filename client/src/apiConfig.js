@@ -1,6 +1,6 @@
 let apiUrl
 const apiUrls = {
-  production: 'https://music-api-jsh.herokuapp.com/api',
+  production: 'https://musicbook.onrender.com/api',
   development: 'http://localhost:3000/api'
 }
 

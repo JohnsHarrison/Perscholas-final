@@ -7,6 +7,7 @@
   height: 100vh;
   width: 100%;
   background-color: lightblue;
+  overflow-x: hidden;
 }
 
 .NavContainer{
@@ -30,10 +31,12 @@
 
 .Community{
   background-color: lightblue;
-  padding: 10px;
+  margin-left: 200px;
 }
 .Song{
+  display: flex;
   margin-bottom: 5px;
+  justify-content: center;
 }
 
 .EditCard{
@@ -42,8 +45,8 @@
 
 .CommunityCardContainer{
   display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+  overflow-x: auto;
+  padding-bottom: 10px;
 } 
 
 form{
@@ -73,6 +76,7 @@ form{
 
 .ArtistPage{
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   background-color: lightblue;
 }
@@ -89,11 +93,14 @@ form{
   justify-content: space-around;
   width: 50%;
   margin: auto;
+  font-weight: bold;
 }
 
 .PageImage{
-  width: 50%;
+  width: 700px;
   margin: auto;
+  border-radius: 25px;
+  box-shadow: black 8px 8px 16px;
 }
 
 .FormContainer{
@@ -183,3 +190,120 @@ form{
   background-color: black;
   color: white;
 }
+
+.ArtistCardContainer{
+  height: 300px;
+  width: 300px;
+  border-radius: 25px;
+  background: linear-gradient(315deg, #bfbfbf, #53bde0);
+  padding: 0px 25px 0px 25px;
+}
+
+
+.ArtistCardContainer img{
+  height: 75%;
+  width: 100%;
+  border-radius: 25px;
+  box-shadow: black 4px 4px 8px;
+}
+
+.ArtistCardContainer h2{
+  margin: 0;
+  text-decoration: none;
+  margin-bottom: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ArtistCardContainer p{
+  margin-top: 5px;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.AlbumCardContainer{
+  height: 300px;
+  width: 300px;
+  border-radius: 25px;
+  background: linear-gradient(315deg, #bfbfbf, #53bde0);
+}
+
+.AlbumCardContainer img{
+width: 100%;
+height: 70%;
+border-top-right-radius: 25px;
+border-top-left-radius: 25px;
+box-shadow: black 0px 4px 8px
+}
+
+.AlbumCardContainer h2,h3,p{
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.AlbumCardContainer span{
+  text-decoration: underline;
+}
+
+.SongInfo{
+  display: flex;
+  align-self: center;
+  width: 50%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.SongWhitespace{
+  display: flex;
+  align-self: center;
+  flex-grow: 1;
+  border-style: none none dotted none;
+  margin: 20px 5px 0px 5px;
+}
+
+.AlbumsContainer{
+  display: flex;
+  margin-left: 200px;
+}
+
+.AlbumCardContainer2{
+  height: 300px;
+  width: 350px;
+  border-radius: 25px;
+  background: linear-gradient(315deg, #bfbfbf, #53bde0);
+  margin: 0px 15px 15px 15px;
+}
+
+.AlbumCardContainer2 img{
+  width: 100%;
+  height: 70%;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  box-shadow: black 0px 4px 8px
+  }
+
+  .AlbumCardContainer2 h1,p{
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .LoginBar{
+    position: fixed;
+    top: 0;
+    right: 20px;
+  }
+
+  .LoginBar a{
+    font-size: 1.5rem;
+    text-decoration: none;
+    margin-right: 25px;
+  }
+
+  

@@ -1,27 +1,29 @@
 import { useState, useEffect } from "react";
-import { NavLink,useParams, } from "react-router-dom";
+import { NavLink,useParams,useNavigate } from "react-router-dom";
 import axios from 'axios'
 import apiUrl from "../apiConfig";
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
+import Missing_artist from '../assets/Missing_artist.svg'
+import Missing_album from '../assets/Missing_album.svg'
+
 
 
 function ArtistPage(){
 const [artist,setArtist] = useState(null)
 const [album, setAlbum] = useState(null)
 const {id} = useParams()
+const navigate = useNavigate()
+const loggedInUser =sessionStorage.getItem("user");
 
 
 useEffect(() => {
     
+console.log(artist)
+
     const fetchArtist = async (id) => {
    try {
        const response = await axios(`${apiUrl}/artists/${id}`)
        setArtist(response.data.artist)
-    //    console.log(artist)
+       console.log(response)
    } catch (error) {
        console.log(error)
    }
@@ -34,27 +36,13 @@ useEffect(() => {
         return(
         <div className="CommunityCard"key={index}>
         <NavLink to={`/community/album/${album_id}`}>
-        <Card sx={{ maxWidth: 345 }}>
-            <CardActionArea>
-                <CardMedia
-                  component="img"
-                  height="140"
-                  image={album.image}
-                  alt=""
-            />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                  {album.artist}
-                  </Typography>
-                  <Typography gutterBottom variant="h5" component="div">
-                  {album.name}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                  Tracks:{album.tracks} Released:{album.released} Runtime:{album.runtime}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
+        <div className='AlbumCardContainer2'> 
+              {
+                album.image === '' ? <img alt="" src={Missing_album}></img>: <img alt="" src={album.image}></img>
+              }
+              <h1>{album.name}</h1>
+              <p><span>Tracks</span>:{album.tracks} <span>Released</span>:{album.released} <span>Runtime</span>:{album.runtime}</p>
+            </div>
             </NavLink>
             </div>
         )
@@ -65,16 +53,36 @@ useEffect(() => {
   fetchArtist(id)
 }, [id])
 
+const destroyArtist = (id) => {
+  axios({
+     url: `${apiUrl}/artists/${id}`,
+     method: 'DELETE'
+   })
+   alert("Artist deleted!")
+   navigate('/community')
+}
+
 
     return(
         <div>
             { artist === null ? null :<div className="ArtistContainer">
-            <h1>{artist.name}</h1>
-            <img className="PageImage" alt="" src={artist.image}></img>
+            <h1 style={{"fontSize":"3rem"}}>{artist.name}</h1>
+            {
+              artist.image === '' ? <img className="PageImage" alt='' src={Missing_artist}></img> : <img className="PageImage" alt="" src={artist.image}></img>
+            }
             <h2>{artist.genre}</h2>
             <h2>ARTIST ID: {artist._id}</h2>
+            {
+              loggedInUser ?
+              <div>  <button onClick={() => destroyArtist(id)} >Delete Item</button>
+              <NavLink to={`/community/artist/${id}/edit`}><button>Edit</button></NavLink>
+              </div> : null
+            }
             <div className='ArtistPage'>
-            {album}
+              <h1>Albums</h1>
+              <div className="AlbumsContainer">
+                {album}
+              </div>
             </div>
             </div>
             }

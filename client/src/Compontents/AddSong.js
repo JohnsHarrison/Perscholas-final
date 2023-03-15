@@ -9,6 +9,8 @@ function AddSong(){
 const navigate = useNavigate();
 const [song, setSong] = useState({
     name:"",
+    artist_name:"",
+    album_name:"",
     track_number:0,
     length:"",
     explict:1,
@@ -56,6 +58,20 @@ const [createdSong, setCreatedSong] = useState(null)
         placeholder="Song Name"
         defaultValue={song.name}
         name="name"
+        onChange={(e) => handleChange(e)} required />
+        
+        <label>Artist Name</label>
+        <input
+        placeholder="Artist Name"
+        defaultValue={song.artist_name}
+        name="artist_name"
+        onChange={(e) => handleChange(e)} />
+
+        <label>Album Name</label>
+        <input
+        placeholder="Album Name"
+        defaultValue={song.album_name}
+        name="album_name"
         onChange={(e) => handleChange(e)} />
 
         <label>Album ID</label>

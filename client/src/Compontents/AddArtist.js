@@ -5,6 +5,7 @@ import apiUrl from "../apiConfig"
 import axios from 'axios';
 
 
+
 function AddArtist(){
 const navigate = useNavigate();
 const [artist, setArtist] = useState({
@@ -27,7 +28,6 @@ const [createdArtist, setCreatedArtist] = useState(null)
       
       const handleSubmit = (event) => {
         event.preventDefault()
-    
        
         axios({
           url: `${apiUrl}/artists`,
@@ -56,7 +56,7 @@ const [createdArtist, setCreatedArtist] = useState(null)
         placeholder="Artist"
         defaultValue={artist.name}
         name="name"
-        onChange={(e) => handleChange(e)} />
+        onChange={(e) => handleChange(e)} required />
 
         <label>Image</label>
         <input

@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import axios from 'axios'
 import apiUrl from "../apiConfig";
 import * as React from 'react';
+import { useNavigate } from "react-router-dom";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -14,8 +15,9 @@ import { CardActionArea } from '@mui/material';
 
 
 function EditArtist(){
+    const navigate = useNavigate()
     const { id } = useParams()  //get the id from the current object to update
-    const [results,setResults] = useState(null)
+    // const [results,setResults] = useState(null)
     const [artist, setArtist] = useState({
         name:'',
         image:'',
@@ -50,39 +52,13 @@ function EditArtist(){
              method: 'PUT',
              data: artist
          }).catch(console.error)
-         setResults(artist)
+        //  setResults(artist)
+        navigate(`/community/artist/${id}`)
     }
 
 
     return(
         <div className='EditPage'>
-           {
-             results === null ? null :
-              <div className="EditCard">
-             <h2>Artist is now </h2>  
-            <Card sx={{ maxWidth: 345 }}>
-            <CardActionArea>
-                <CardMedia
-                  component="img"
-                  height="140"
-                  image={artist.image}
-                  alt=""
-            />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                  {artist.name}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                  {artist.genre}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          </div> 
-           }
-           {
-            results === null ?
-
              <form onSubmit={(e) => handleSubmit(e)}>
         <label>Artist</label>
         <input
@@ -107,17 +83,12 @@ function EditArtist(){
 
         <button type="submit">Submit</button>
 
-        <Link to={"/community"}>
+        <Link to={`/community/artist/${id}`}>
             <button>Cancel</button>
         </Link>
 
     </form>
-    : <Link to={"/community"}>
-    <button>Go Back</button>
-        </Link>
-}
-
-        </div>
+    </div>
     )
 }
 

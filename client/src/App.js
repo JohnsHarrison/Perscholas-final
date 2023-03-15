@@ -1,8 +1,7 @@
 import './App.css';
-import { Routes,Route,useNavigate } from 'react-router-dom';
+import { Routes,Route,useNavigate, NavLink } from 'react-router-dom';
 import Home from './Compontents/Home';
 import Community from './Compontents/Community';
-import NavBar from './Compontents/NavBar';
 import Contribute from './Compontents/Contribute';
 import EditArtist from './Compontents/EditArtist';
 import EditAlbum from './Compontents/EditAlbum';
@@ -18,32 +17,11 @@ function App() {
 
   const [currentUser, setCurrentUser] = useState(null)
   const navigate = useNavigate();
-
-
-
-  useEffect(() => {
-    const loggedInUser = sessionStorage.getItem("user");
-    if (loggedInUser) {
-      setCurrentUser(JSON.parse(loggedInUser));
-      navigate('/')
-    }else{
-      navigate('/login')
-    }
-  }, []);
+  const loggedInUser = sessionStorage.getItem("user");
 
   return (
     <div className="App">
-      {
-        !currentUser ? 
-        <>
-          <Routes>
-            <Route path='login' element={<Login setCurrentUser= {setCurrentUser}  currentUser={currentUser}/>}/>
-            <Route path = 'register' element={<Register />}/>
-           
-          </Routes>
-        </>: 
-        <>
-      {/* <NavBar/> */}
+     
       <UserProfile  currentUser={currentUser} />
       <Routes>
         <Route path='/' element={<Home/>}/>
@@ -54,10 +32,16 @@ function App() {
         <Route path='/community/artist/:id/edit' element={<EditArtist/>}/>
         <Route path='/community/album/:id/edit' element={<EditAlbum/>}/>
         <Route path='/community/song/:id/edit' element={<EditSong/>}/>
-        
+        <Route path='/login' element={<Login setCurrentUser= {setCurrentUser}  currentUser={currentUser}/>}/>
+        <Route path='/register' element={<Register/>}/>
       </Routes>
-      </>
+      {
+        !loggedInUser ? <div className='LoginBar'>
+            <NavLink to={'/login'}>Log In</NavLink>
+            <NavLink to={'/register'}>Register</NavLink>
+      </div> : null
       }
+      
     </div>
   );
 }
