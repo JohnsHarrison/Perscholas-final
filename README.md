@@ -30,13 +30,13 @@ Password - password
 - Add, remove, and edit list.
 
 ## API Endpoints
-All API calls will begin with "https://music-api-jsh.herokuapp.com/api"
+All API calls will begin with "https://musicbook.onrender.com/api"
 ## Artists
 - Get all artists ( /artists )
 
 Example 
 ```js
-axios.get("https://music-api-jsh.herokuapp.com/api/artists")
+axios.get("https://musicbook.onrender.com/api/artists")
 ```
 
 Response
@@ -47,7 +47,7 @@ Response
 
 Example
 ```js
-axios.get("https://music-api-jsh.herokuapp.com/api/artists/630665e593b460f268842700")
+axios.get("https://musicbook.onrender.com/api/artists/630665e593b460f268842700")
 ```
 
 Response
@@ -59,7 +59,7 @@ Response
 Example
 
 ```js
-axios.post("https://music-api-jsh.herokuapp.com/api/artists")
+axios.post("https://musicbook.onrender.com/api/artists")
 {
   "name": "test name",
   "image": "https://mui.com/static/images/avatar/1-sm.jpeg",
@@ -76,7 +76,7 @@ Response
 Example 
 
 ```js
-axios.put("https://music-api-jsh.herokuapp.com/api/artists/630cc286374604208f1fc2e0")
+axios.put("https://musicbook.onrender.com/api/artists/630cc286374604208f1fc2e0")
 {
   "name": "updated name",
   "image": "https://mui.com/static/images/avatar/1-sm.jpeg",
@@ -90,7 +90,7 @@ Delete Artist ( /artists/{id} )
 Example 
 
 ```js
-axios.delete("https://music-api-jsh.herokuapp.com/api/artists/630cc286374604208f1fc2e0")
+axios.delete("https://musicbook.onrender.com/api/artists/630cc286374604208f1fc2e0")
 ```
 
 Response
@@ -102,7 +102,7 @@ Response
 
 Example 
 ```js
-axios.get("https://music-api-jsh.herokuapp.com/api/albums")
+axios.get("https://musicbook.onrender.com/api/albums")
 ```
 Response
 
@@ -112,7 +112,7 @@ Response
 
 Example
 ```js
-axios.get("https://music-api-jsh.herokuapp.com/api/63066689849caa5784b288ef")
+axios.get("https://musicbook.onrender.com/api/63066689849caa5784b288ef")
 ```
 Response
 
@@ -122,7 +122,7 @@ Response
 
 Example
  ```js
- axios.get("https://music-api-jsh.herokuapp.com/api/albums/630665e593b460f2688426fd/artist")
+ axios.get("https://musicbook.onrender.com/api/albums/630665e593b460f2688426fd/artist")
  ```
  Response
  
@@ -133,7 +133,7 @@ Example
 
 Example 
 ```js
-axios.post("https://music-api-jsh.herokuapp.com/api/albums")
+axios.post("https://musicbook.onrender.com/api/albums")
 {
   "artist": "Test Band",
   "artist_id": "630665e593b460f268842701",
@@ -171,7 +171,7 @@ Resonse
 
 Example
 ```js
-axios.delete("https://music-api-jsh.herokuapp.com/api/albums/630ccaba374604208f1fc2e6")
+axios.delete("https://musicbook.onrender.com/api/albums/630ccaba374604208f1fc2e6")
 ```
 
 Response
@@ -183,7 +183,7 @@ Response
 
 Example
 ```js
-axios.get("https://music-api-jsh.herokuapp.com/api/songs")
+axios.get("https://musicbook.onrender.com/api/songs")
 ```
 Response
 
@@ -193,7 +193,7 @@ Response
 
 Example
 ```js
-axios.get("https://music-api-jsh.herokuapp.com/api/songs/63066689849caa5784b288eb/album")
+axios.get("https://musicbook.onrender.com/api/songs/63066689849caa5784b288eb/album")
 ```
 Response
 
@@ -205,7 +205,7 @@ Response
 
 Example
 ```js
-axios.post("https://music-api-jsh.herokuapp.com/api/songs")
+axios.post("https://musicbook.onrender.com/api/songs")
 {
  "name": "Test Song",
   "album_id": "63066689849caa5784b288eb",
@@ -221,7 +221,7 @@ Response
 
 Example
 ```js
-axios.put("https://music-api-jsh.herokuapp.com/api/songs/630ccee4374604208f1fc2eb")
+axios.put("https://musicbook.onrender.com/api/songs/630ccee4374604208f1fc2eb")
 {
  "name": "updated Song",
  "album_id": "63066689849caa5784b288eb",
@@ -237,7 +237,7 @@ Reponse
 
 Example
 ```js
-axios.delete("https://music-api-jsh.herokuapp.com/api/songs/630ccee4374604208f1fc2eb")
+axios.delete("https://musicbook.onrender.com/api/songs/630ccee4374604208f1fc2eb")
 ```
 
 Response
