@@ -16,14 +16,11 @@ const loggedInUser =sessionStorage.getItem("user");
 
 
 useEffect(() => {
-    
-console.log(artist)
 
     const fetchArtist = async (id) => {
    try {
        const response = await axios(`${apiUrl}/artists/${id}`)
        setArtist(response.data.artist)
-       console.log(response)
    } catch (error) {
        console.log(error)
    }

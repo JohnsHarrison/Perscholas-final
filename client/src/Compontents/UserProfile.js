@@ -59,7 +59,11 @@ function UserProfile(props){
                                 <button className="ProfileButton" onClick={handleLogout}>Log Out</button>
                                 <button className="ProfileButton" onClick={destroyProfile}> DELETE PROFILE</button> 
                             </div>    
-                            : null
+                            :
+                            <div className="LoginBar">
+                                <button className="ProfileButton"><NavLink to={'/login'}>Log In</NavLink></button>
+                                <button className="ProfileButton"><NavLink to={'/register'}>Register</NavLink></button>
+                            </div>                           
                     }    
             </div>
         </div>

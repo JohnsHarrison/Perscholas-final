@@ -76,7 +76,7 @@ const [createdSong, setCreatedSong] = useState(null)
 
         <label>Album ID</label>
         <input
-        placeholder="123e456b789f3219876ff.jpg"
+        placeholder="123e456b789f3219876ff"
         defaultValue={song.album_id}
         name="album_id"
         onChange={(e) => handleChange(e)} />

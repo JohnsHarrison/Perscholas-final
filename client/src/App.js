@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes,Route, NavLink } from 'react-router-dom';
+import { Routes,Route } from 'react-router-dom';
 import Home from './Compontents/Home';
 import Community from './Compontents/Community';
 import Contribute from './Compontents/Contribute';
@@ -16,7 +16,7 @@ import UserProfile from './Compontents/UserProfile';
 function App() {
 
   const [currentUser, setCurrentUser] = useState(null)
-  const loggedInUser = sessionStorage.getItem("user");
+
 
   return (
     <div className="App">
@@ -34,12 +34,6 @@ function App() {
         <Route path='/login' element={<Login setCurrentUser= {setCurrentUser}  currentUser={currentUser}/>}/>
         <Route path='/register' element={<Register/>}/>
       </Routes>
-      {
-        !loggedInUser ? <div className='LoginBar'>
-            <NavLink to={'/login'}>Log In</NavLink>
-            <NavLink to={'/register'}>Register</NavLink>
-      </div> : null
-      }
       
     </div>
   );

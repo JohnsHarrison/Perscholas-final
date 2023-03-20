@@ -52,7 +52,6 @@ const fetchAlbums = async () => {
         const results = response.data.albums
         const mappedAlbums = results.map((album,index)=>{
           const id =(album._id)
-          console.log(album.released)
           return(
             <div className="CommunityCard"key={index}>
             <NavLink  style={{"textDecoration":"none"}} to={`/community/album/${id}`}>
@@ -91,14 +90,13 @@ const fetchSongs = async () => {
       }catch(error){
         console.log(error)
     }
-    const mappedSongs = list.map((song)=>{
+    const mappedSongs = list.map((song, index)=>{
       const artist = song.artist_name ? song.artist_name : "?"
       const album = song.album_name ? song.album_name : "?"
-      console.log(song)
       return(
-   
-      <h1>{song.name} <span style={{"fontSize":"1rem"}}>by</span> {artist} <span style={{"fontSize":"1rem"}}> from </span> {album}</h1>
-  
+      <div className='SongText'>
+        <h1 key={index} >{song.name} <span style={{"fontSize":"1rem"}}>by</span> {artist} <span style={{"fontSize":"1rem"}}> from </span> {album}</h1>
+      </div>
       )
     })
     setSongs(mappedSongs)

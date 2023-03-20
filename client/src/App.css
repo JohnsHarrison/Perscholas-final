@@ -8,6 +8,7 @@
   width: 100%;
   background-color: lightblue;
   overflow-x: hidden;
+  padding-left: 200px;
 }
 
 .NavContainer{
@@ -17,7 +18,7 @@
 }
 
 .Footer img{
-  width: 3%;
+  width: 5%;
   margin-left: 10px;
 }
 
@@ -31,7 +32,6 @@
 
 .Community{
   background-color: lightblue;
-  margin-left: 200px;
 }
 .Song{
   display: flex;
@@ -268,7 +268,6 @@ box-shadow: black 0px 4px 8px
 
 .AlbumsContainer{
   display: flex;
-  margin-left: 200px;
 }
 
 .AlbumCardContainer2{
@@ -294,16 +293,62 @@ box-shadow: black 0px 4px 8px
     white-space: nowrap;
   }
 
-  .LoginBar{
-    position: fixed;
-    top: 0;
-    right: 20px;
-  }
 
   .LoginBar a{
     font-size: 1.5rem;
     text-decoration: none;
-    margin-right: 25px;
+  }
+
+
+  @media only screen and (max-width: 1024px) {
+    .Footer img{
+      width: 10%;
+    }
+  }
+
+
+  @media only screen and (max-width: 768px) {
+    .PageImage {
+      width: 450px;
+    }
+    
+    .AlbumCardContainer2{
+      height: 250px;
+      width: 300px;
+    }
+
+    .SongText h1{
+      font-size: 1.5rem;
+    }
+
+    .ArtistCardContainer{
+      height: 250px;
+      width: 250px;
+    }
+
+    .ArtistCardContainer p {
+      margin: 0;
+    }
+
+    .AlbumCardContainer{
+      height: 250px;
+      width: 250px;
+    }
+
+    .AlbumCardContainer h2,h3{
+      font-size: 1.2rem;
+    }
+
+    .AlbumCardContainer p{
+      font-size: .8rem;
+    }
+
+    .AlbumPage p{
+      font-size:12px
+    }
+    .Footer img{
+      width: 15%;
+    }
   }
 
   
