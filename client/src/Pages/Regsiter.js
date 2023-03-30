@@ -42,7 +42,6 @@ function Register(){
         if (createdUser === "error") {
         alert("Please try again")
         }else if (createdUser){
-        console.log(createdUser)
            navigate(`/login`)
         }
       }, [createdUser, navigate])
