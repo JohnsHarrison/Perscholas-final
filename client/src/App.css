@@ -299,6 +299,23 @@ box-shadow: black 0px 4px 8px
     text-decoration: none;
   }
 
+  .LoadingScreen{
+    background-color: black;
+    height: 100vh;
+    width: calc(100vw - 200px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    color: white;
+    align-items:center ;
+    left: 200px;
+  }
+
+  .LoadingScreen img{
+    width: 25%;
+    height: 50%
+  }
 
   @media only screen and (max-width: 1024px) {
     .Footer img{

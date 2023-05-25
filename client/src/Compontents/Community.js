@@ -5,6 +5,7 @@ import apiUrl from "../apiConfig"
 import axios from "axios"
 import Missing_album from '../assets/Missing_album.svg'
 import Missing_artist from '../assets/Missing_artist.svg'
+import Loader from "../assets/Load.gif"
 
 
 function Community(){
@@ -114,6 +115,13 @@ const fetchSongs = async () => {
 
 
     return(
+      <>
+      {
+        !artists || !albums || !songs ? <div className='LoadingScreen'>
+          <img src={Loader}></img>
+          <h1>L O A D I N G</h1>
+        </div> : null
+      }
     <div className='Community'>
       <h1>CHECK OUT WHAT THE COMMUNITY IS LISTENING TO NOW!</h1>
       <h3>ARTISTS</h3>
@@ -131,6 +139,7 @@ const fetchSongs = async () => {
        {songs}
 
     </div>
+    </>
     )
 }
 
