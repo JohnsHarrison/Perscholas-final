@@ -118,7 +118,7 @@ const fetchSongs = async () => {
       <>
       {
         !artists || !albums || !songs ? <div className='LoadingScreen'>
-          <img src={Loader}></img>
+          <img src={Loader} alt=''></img>
           <h1>L O A D I N G</h1>
         </div> : null
       }
